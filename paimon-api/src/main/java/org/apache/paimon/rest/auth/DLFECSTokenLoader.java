@@ -88,6 +88,8 @@ public class DLFECSTokenLoader implements DLFTokenLoader {
                         System.currentTimeMillis() - startTime);
             }
             return responseBodyStr;
+        } catch (RuntimeException e) {
+            throw e;
         } catch (Exception e) {
             throw new RuntimeException("get response failed, error : " + e.getMessage(), e);
         }
